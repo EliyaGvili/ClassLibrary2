@@ -12,19 +12,26 @@ namespace Server
     {
         public void HandleClient (TcpClient client)
         {
-            new Task(() =>
+            Console.WriteLine("ch");
+           Task task =  new Task(() =>
            {
+               Console.WriteLine("ch tsk");
                using (NetworkStream stream = client.GetStream())
                using (StreamReader reader = new StreamReader(stream))
                using (StreamWriter writer = new StreamWriter(stream))
                {
+                   Console.WriteLine("strm");
                    string commandLine = reader.ReadLine();
+                   //int commandLine = reader.Read();
                    Console.WriteLine("Got command: {0}", commandLine);
-                   string s = "s1";
-                   writer.Write(s);
+                  //string s = "s1";
+                   //int s = 5;
+                   //writer.WriteLine(s);
                }
                client.Close();
-           }).Start();
+           });
+            task.Start();
+            task.Wait();
         }
     }
 }

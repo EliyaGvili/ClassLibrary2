@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 namespace Client
 {
@@ -21,17 +22,28 @@ namespace Client
             client.Connect(ep);
             Console.WriteLine("You are connected");
 
-            using (NetworkStream stream = client.GetStream())
-            using (BinaryReader reader = new BinaryReader(stream))
-            using (BinaryWriter writer = new BinaryWriter(stream))
-             {
-                Console.WriteLine("Please enter a number");
-                int num = int.Parse(Console.ReadLine());
-                writer.Write(num);
+            //while (true)
+            //{
+                using (NetworkStream stream = client.GetStream())
+                using (StreamReader reader = new StreamReader(stream))
+                using (StreamWriter writer = new StreamWriter(stream))
+                {
+                    Console.WriteLine("Please enter a number");
+                // int num = 7;// int.Parse(Console.ReadLine());
+                //string num = "7";
+                string num = Console.ReadLine();
+                //writer.Write(num);
+                writer.WriteLine(num);
+                    Console.WriteLine("Num is: {0}", num);
 
-                int result = reader.ReadInt32();
-                Console.WriteLine("Result = {0}", result);
-             }
+                // Thread.Sleep(455);
+
+                //int result = reader.Read();
+                //string result = reader.ReadLine();
+                //Console.WriteLine("Result = {0}", result);
+                   // break;
+                }
+            //}
             client.Close();
         }
     }

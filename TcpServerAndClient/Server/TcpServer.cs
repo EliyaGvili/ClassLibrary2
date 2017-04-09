@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Net;
+using System.Threading;
 
 namespace Server
 {
@@ -41,7 +42,11 @@ namespace Server
                        Console.WriteLine("9999");
                        TcpClient client = listener.AcceptTcpClient();
                        Console.WriteLine("Got new connection");
+                       //Thread.Sleep(86);
+                       //break;
                        ch.HandleClient(client);
+                       //client.Close();
+                       break;
                    }
                    catch (SocketException)
                    {
@@ -51,11 +56,13 @@ namespace Server
                }
                Console.WriteLine("---");
            });
-            task.Start();
+           task.Start();
+           task.Wait();
         }
 
         public void Stop()
         {
+            Console.WriteLine("S");
             listener.Stop();
         }
     }
