@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Sockets;
 
-namespace Client
+namespace Server
 {
-    class Program
+    public interface IClientHandler
     {
-        static void Main(string[] args)
-        {
-        }
+        void HandleClient(TcpClient client);
     }
 }
