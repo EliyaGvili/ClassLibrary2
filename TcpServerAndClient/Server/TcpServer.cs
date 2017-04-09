@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +9,13 @@ using System.Net;
 
 namespace Server
 {
-    class Server
+    class TcpServer
     {
         private int port;
         private TcpListener listener;
         private IClientHandler ch;
 
-        public Server (int port, IClientHandler ch)
+        public TcpServer (int port, IClientHandler ch)
         {
             this.port = port;
             this.ch = ch;
@@ -31,16 +32,20 @@ namespace Server
 
             Task task = new Task(() =>
            {
+               Console.WriteLine("$$$$$$#########$$$$$$$#######");
                while (true)
                {
+                   Console.WriteLine("3333333333333333333333444444444");
                    try
                    {
+                       Console.WriteLine("9999");
                        TcpClient client = listener.AcceptTcpClient();
                        Console.WriteLine("Got new connection");
                        ch.HandleClient(client);
                    }
                    catch (SocketException)
                    {
+                       Console.WriteLine("xptn");
                        break;
                    }
                }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,10 @@ namespace Client
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Client");
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"),8000);
             TcpClient client = new TcpClient();
+            Console.WriteLine("3523525");
             client.Connect(ep);
             Console.WriteLine("You are connected");
 
