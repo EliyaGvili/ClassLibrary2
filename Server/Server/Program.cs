@@ -10,6 +10,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
+            Server server = new Server(8000, new ClientHandler());
         }
     }
 }
