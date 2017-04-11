@@ -11,5 +11,6 @@ namespace Server
     public interface IClientHandler
     {
         void HandleClient(TcpClient client);
+        //fhfhfjh
     }
 }
