@@ -26,22 +26,33 @@ namespace Client
             //{
                 using (NetworkStream stream = client.GetStream())
                 using (StreamReader reader = new StreamReader(stream))
-                using (StreamWriter writer = new StreamWriter(stream))
-                {
-                    Console.WriteLine("Please enter a number");
+            using (StreamWriter writer = new StreamWriter(stream))
+            {
+                Console.WriteLine("Please enter a number");
+                string s = Console.ReadLine();
+                //string s = "568\n";
+                writer.WriteLine(s);
+
+                //string s2 = reader.ReadLine();
+                //Console.WriteLine(s2);
+
+
+
+                /*Console.WriteLine("Please enter a number");
                 // int num = 7;// int.Parse(Console.ReadLine());
                 //string num = "7";
                 string num = Console.ReadLine();
                 //writer.Write(num);
+                writer.Flush();
                 writer.WriteLine(num);
                     Console.WriteLine("Num is: {0}", num);
 
                 // Thread.Sleep(455);
 
                 //int result = reader.Read();
-                //string result = reader.ReadLine();
-                //Console.WriteLine("Result = {0}", result);
-                   // break;
+                string result = reader.ReadLine();
+                Console.WriteLine("Result = {0}", result);
+                   // break;*/
                 }
             //}
             client.Close();

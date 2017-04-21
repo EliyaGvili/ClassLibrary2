@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpServerAndClient", "TcpServerAndClient\TcpServerAndClient.csproj", "{F07F76E8-9044-4684-8219-D0E8CBA28952}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F0F26440-7A9A-4A2B-949D-A7B35B6B7E53} = {F0F26440-7A9A-4A2B-949D-A7B35B6B7E53}
+		{4DE4DBDF-AA9F-411B-8297-9DCED589898C} = {4DE4DBDF-AA9F-411B-8297-9DCED589898C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{F0F26440-7A9A-4A2B-949D-A7B35B6B7E53}"
 EndProject

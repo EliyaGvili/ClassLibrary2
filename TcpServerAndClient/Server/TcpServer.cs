@@ -46,7 +46,7 @@ namespace Server
                        //break;
                        ch.HandleClient(client);
                        //client.Close();
-                       break;
+                       //break;
                    }
                    catch (SocketException)
                    {
@@ -57,7 +57,7 @@ namespace Server
                Console.WriteLine("---");
            });
            task.Start();
-           task.Wait();
+           //task.Wait();
         }
 
         public void Stop()

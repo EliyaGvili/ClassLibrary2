@@ -13,7 +13,11 @@ namespace Server
             Console.WriteLine("Server");
             TcpServer server = new TcpServer(8000, new ClientHandler());
             server.Start();
-            server.Stop();
+            while (true)
+            {
+                string s = "7";
+            }
+            //server.Stop();
         }
     }
 }
