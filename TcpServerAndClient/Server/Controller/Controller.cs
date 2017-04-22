@@ -7,6 +7,7 @@ using System.Collections;
 using System.IO;
 using System.Net.Sockets;
 using MazeLib;
+using SearchAlgorithmsLib;
 
 namespace Server
 {
@@ -15,7 +16,7 @@ namespace Server
         private IModel model;
         private Dictionary<string, ICommand> commands;
         private Dictionary<string, Maze> mazes;
-        //private Dictionary<string, Solution> solutions;
+        private Dictionary<string, Solution> solutions;
 
         public Controller ()
         {
@@ -23,8 +24,13 @@ namespace Server
             model = new Model(this);
             commands = new Dictionary<string, ICommand>();
             commands.Add("generate", new GenerateMazeCommand(model));
+            commands.Add("solve", new SolveMazeCommand(model));
+            commands.Add("list", new ListCommand(model));
             mazes = new Dictionary<string, Maze>();
-            //solutions = new Dictionary<string, Solution>();
+            /*mazes.Add("maze", null);
+            mazes.Add("maze3", null);
+            mazes.Add("maze2", null);*/
+            solutions = new Dictionary<string, Solution>();
         }
 
         public string ExecuteCommand (string commandLine, TcpClient client)
@@ -43,9 +49,34 @@ namespace Server
             mazes.Add(name, maze);
         }
 
-        /*public void AddSolution(string mazeName, Solution solution)
+        public void AddSolution(string mazeName, Solution solution)
         {
             solutions.Add(mazeName, solution);
-        }*/
+        }
+
+        public Maze GetMaze (string name)
+        {
+            if (mazes.ContainsKey(name))
+            {
+                return mazes[name];
+            }
+
+            return null;
+        }
+
+        public Solution GetSolution (string name)
+        {
+            if (solutions.ContainsKey(name))
+            {
+                return solutions[name];
+            }
+
+            return null;
+        }
+
+        public List<string> GetMazesNames ()
+        {
+            return new List<string>(mazes.Keys);
+        }
     }
 }

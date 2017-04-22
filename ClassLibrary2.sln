@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchAlgorithmsLib", "ClassLibrary2\SearchAlgorithmsLib.csproj", "{97CF8341-58F7-4573-8622-1C686AA48974}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchMaze", "SearchMaze\SearchMaze.csproj", "{AC9D819D-0F0E-40FD-9123-AB3B2B6793B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchAlgorithmsLib", "SearchAlgorithmsLib\SearchAlgorithmsLib.csproj", "{D5F53E11-1A8C-4403-85FC-A100BE9E72ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{97CF8341-58F7-4573-8622-1C686AA48974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97CF8341-58F7-4573-8622-1C686AA48974}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97CF8341-58F7-4573-8622-1C686AA48974}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97CF8341-58F7-4573-8622-1C686AA48974}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC9D819D-0F0E-40FD-9123-AB3B2B6793B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC9D819D-0F0E-40FD-9123-AB3B2B6793B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC9D819D-0F0E-40FD-9123-AB3B2B6793B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC9D819D-0F0E-40FD-9123-AB3B2B6793B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F53E11-1A8C-4403-85FC-A100BE9E72ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F53E11-1A8C-4403-85FC-A100BE9E72ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F53E11-1A8C-4403-85FC-A100BE9E72ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F53E11-1A8C-4403-85FC-A100BE9E72ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

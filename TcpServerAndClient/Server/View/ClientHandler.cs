@@ -20,34 +20,29 @@ namespace Server
         public void HandleClient (TcpClient client)
         {
             Console.WriteLine("ch");
-           Task task =  new Task(() =>
+           new Task(() =>
            {
                Console.WriteLine("ch tsk");
-               using (NetworkStream stream = client.GetStream())
-               using (StreamReader reader = new StreamReader(stream))
-               using (StreamWriter writer = new StreamWriter(stream))
-               {
-                   /*Console.WriteLine("Waiting for a number");
-                   string s = reader.ReadLine();
-                   Console.WriteLine("Number accepted {0}", s);
+               NetworkStream stream = client.GetStream();
 
-                   s = "890";
-                   writer.WriteLine(s);*/
-                   Console.WriteLine("strm");
-                   string commandLine = reader.ReadLine();
-                   //int commandLine = reader.Read();
-                   Console.WriteLine("Got command: {0}", commandLine);
-                   string result = controller.ExecuteCommand(commandLine, client);
-                   //int s = 5;
-                   //writer.Flush();
-                   //writer.WriteLine(result);
-                   Console.WriteLine(result);
+               BinaryReader reader = new BinaryReader(stream);
+               BinaryWriter writer = new BinaryWriter(stream);
 
+               //StreamReader reader = new StreamReader(stream);
+               //StreamWriter writer = new StreamWriter(stream);
 
-               }
+               //string commandLine = reader.ReadLine();
+
+               string commandLine = reader.ReadString();
+               Console.WriteLine("Got command: {0}", commandLine);
+               string result = controller.ExecuteCommand(commandLine, client);
+
+               //writer.WriteLine(result);
+               writer.Write(result);
+               Console.WriteLine(result);
+
                client.Close();
-           });
-            task.Start();
+           }).Start();
             //task.Wait();
         }
     }

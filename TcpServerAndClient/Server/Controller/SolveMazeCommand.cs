@@ -21,7 +21,9 @@ namespace Server
             string name = args[0];
             int algorithm = int.Parse(args[1]);
 
-            return "66868";
+            return model.SolveMaze(name, algorithm).ToString();
+
+            //return "66868";
 
 
 
