@@ -65,7 +65,7 @@ namespace Client
                        // break;*/
                 //}
             //}
-            //}
+            //}//
             client.Close();
         }
     }
